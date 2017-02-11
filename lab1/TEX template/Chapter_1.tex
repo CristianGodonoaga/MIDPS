@@ -2,13 +2,76 @@
 
 \subsection{Tasks and Points}
 
-Aici trebuie sa fie lista de task-uri care au fost implementate.
+\begin{quote}
+\begin{description}
+
+	\item Basic Level (nota 5 - 6) :
+	
+	initializeaza un nou repositoriu \\
+	configureaza-ti VCS\\
+	crearea branch-urilor (creeaza cel putin 2 branches)\\
+	commit pe ambele branch-uri (cel putin 1 commit per branch)
+
+	\item Normal Level (nota 7 - 8):
+	
+	seteaza un branch to track a remote origin pe care vei putea sa faci push\\
+	reseteaza un branch la commit-ul anterior\\
+	salvarea temporara a schimbarilor care nu se vor face commit imediat\\
+	folosirea fisierului .gitignore
+	
+	\item Advanced Level (nota 9 - 10):
+	
+	merge 2 branches\\
+	rezolvarea conflictelor a 2 branches\\
+	comezile git care trebuie cunoscute
+	\item Bonus Point (+1):\\
+	Folosirea tag-urilor pentru marcarea schimbarilor simnificative precum release-ul.
+
+\end{description}
+\end{quote}
 
 \subsection{Analiza lucrarii de laborator}
 
-Adauga link la repozitoriul tau.
-Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat,
+Inainte de a incepe indeplinirea sarcinelor au fost efectuati citiva pasi aditionali, ce tin de pregatirea calculatorului pentru a putea utiliza acest sistem de versionare a codului. Am ales un sistem descentralizat deoarece acesta ne ofera posibilitati mai ample, referitor la controlul distribuit al versiunelor, gestionarea si revizuirea codului cit si vizualizarea activitatii proectului fata de sistemul centralizat. In special acesta fiind un model de source control ce permite partajarea surselor in mod distribuit intre membrii echipelor fara a depinde de un repozitoriu central.
+
+\begin{flushleft} %
+	\text{\itshape Instalarea si setarea sistemului Git sa efectuat conform manualului oferit de situl oficial git-scm.com.} 
+\end{flushleft}
+
+Utilizind serviciile prestate de reteaua sociala (GitHub) pentru proiecte cu versionarea bazata pe Git, am creat un cont pe \emph{github.com} care detine repozitoriul laboratorului efectuat.
+
+\newcommand*{\authorimg}[1]{%
+	\raisebox{-.3\baselineskip}{%
+		\includegraphics[
+		scale = 0.5, % or use height and width
+		%height=\baselineskip,
+		%width=\baselineskip,
+		keepaspectratio,
+		]{#1}%
+	}%
+}
+\begin{itemize}
+	\item[\authorimg{img/1.png}]
+	\begin{center}
+		Link la repozitoriu: \url{https://github.com/CristianGodonoaga/MIDPS}
+	\end{center}
+\end{itemize}
+
+%\includegraphics[scale = 0.5]{img/1.png}
+
+Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat, 
+\textbf{git command --example "test"}
 cu atit mai putine intrebari vei avea la aparare.
+
+\begin{lstlisting}
+git config --global user.name ""
+\end{lstlisting}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\code{git configss}
+\tt git code
+
+
 
 \subsection{Imagini}
 
