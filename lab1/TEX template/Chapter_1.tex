@@ -59,17 +59,37 @@ Utilizind serviciile prestate de reteaua sociala (GitHub) pentru proiecte cu ver
 
 %\includegraphics[scale = 0.5]{img/img_name.png}
 
-Pentru a asigura o comunicare securizata a datelor intre doua statii am utilizat protocolul de retea SSH. Acesta se foloseste de criptarea cu \emph{\textbf{\href{https://en.wikipedia.org/wiki/Public-key_cryptography}{chei asimetrice}}} ce furnizeaza un mod mai sigur de logare (comunicare) intr-un server cu SSH decit folosind o parola obisnuita.
+Pentru a asigura o comunicare securizata a datelor intre doua statii am utilizat protocolul de retea SSH. Acesta se foloseste de criptarea cu \emph{\textbf{\href{https://en.wikipedia.org/wiki/Public-key_cryptography}{chei asimetrice}}} ce furnizeaza un mod mai sigur de logare (comunicare) intr-un server cu SSH decit folosind o parola obisnuita. La generarea acestor perechi de key se utilizeaza un mecanizm special care ne ofera doua siruri lungi de caractere: o cheie publica si o cheie privata.
 
-Primul pas este de a crea perechea de chei pe masina client:
-
+Intrun prim pas se creaza perechea de chei pe masina client:
 \begin{quote}\tt
-	\$ssh-keygen -t rsa (Fig.~\ref{fig:generarea_ssh_key})
+	\$ssh-keygen -t rsa \hfill (Fig.~\ref{fig:generarea_ssh_key})
 \end{quote}
 
-Dupa ce am introdus comanda de generare a cheii am primit citeva intrebari ce tine de marirea securitatii prin protejarea cheii privade, cu o parola de acces.
+%\begin{description}
+%	\item[-t rsa] tipul de cheii generate
+%\end{description}
 
-La generarea acestor perechi de key se utilizeaza un mecanizm special care ne ofera doua siruri lungi de caractere: o cheie publica si o cheie privata.
+Dupa ce am introdus comanda de generare a cheii am primit citeva intrebari ce tine de marirea securitatii prin protejarea cheii privade, cu o parola de acces. Odata ce perechea de chei este generata plasam cheia publica pe serverul GitHub (Fig.~\ref{fig:add_key_onserver}).
+
+Pentru a incepe utilizarea sistemului Git, mai intii este nevoie de setarea configuratiei de baza. Aceste configurari pot fi facute in trei modalitati, ele vor determina cit de amplu va fi aplicarea acestora.
+Utilizind comenzile:
+\begin{quote}\tt
+	\$git config --global user.name "Godonoaga C."\\
+	\$git config --global user.email "some@email.com" \hfill(Fig.~\ref{fig:generarea_ssh_key})
+\end{quote}
+%\begin{description}
+%	\item[\tt\$git config --system] \hfil Configurare la nivel de sistem. 
+%	\item[\tt\$git config --global] \hfil Configurare la nivel de utilizator.
+%	\item[\tt\$git config --local] \hfil Configurare la nivel de proiect (by default).
+%	\item[\tt\$git config --file <filename>] \hfil Configurare din fisierul concret
+%\end{description}
+am setat numele si posta la nivel de utilizator, ce ne permite utilizarea acestor date in viitor pentru oarecare alt proiect al acestuia fara a le specifica in parte.
+Deoarece aceste setari depind foarte mult de necesitatea utilizatorului nu exista o varianta exacta ce tine de setarea sistemului Git.
+
+Pentru a da start sistemului si anume pentru a monitoriza schimbarile in proiectul necesar se utilizeaza comanda {\tt \$git init}, aceasta va insemna ca noi avem nevoie de monitorizarea schimbarilor a tuturor fisierilor ce se afla in folderul curenta (creareaza un repository).
+
+
 
 
 Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat, 
@@ -90,12 +110,20 @@ git config --global user.name ""
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale = 1]{img/1.png}
-		\caption{O figur\u{a} cu text incorporat}%
+		\centering
+		\includegraphics[scale = 0.9]{img/ssh_key.png}
+		\caption{Generarea ssh-key}%
 		\label{fig:generarea_ssh_key}
 	\end{center}
 \end{figure}
 
-Adauga cite cel putin o imagine (sau mai multe) pentru fiecare functionalitate adaugata.
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/add_key_onserver.png}
+		\caption{Adaugarea ssh-key pe server}%
+		\label{fig:add_key_onserver}
+	\end{center}
+\end{figure}
 
 \clearpage
