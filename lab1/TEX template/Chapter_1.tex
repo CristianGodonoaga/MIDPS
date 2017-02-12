@@ -38,7 +38,7 @@ Inainte de a incepe indeplinirea sarcinelor au fost efectuati citiva pasi aditio
 	\text{\itshape Instalarea si setarea sistemului Git sa efectuat conform manualului oferit de situl oficial git-scm.com.} 
 \end{flushleft}
 
-Utilizind serviciile prestate de reteaua sociala (GitHub) pentru proiecte cu versionarea bazata pe Git, am creat un cont pe \emph{github.com} care detine repozitoriul laboratorului efectuat.
+Utilizind serviciile prestate de reteaua sociala (GitHub) pentru proiecte cu versionarea bazata pe Git, am creat un cont pe \emph{\url{www.github.com}} care detine repozitoriul laboratorului efectuat.
 
 \newcommand*{\authorimg}[1]{%
 	\raisebox{-.3\baselineskip}{%
@@ -57,7 +57,20 @@ Utilizind serviciile prestate de reteaua sociala (GitHub) pentru proiecte cu ver
 	\end{center}
 \end{itemize}
 
-%\includegraphics[scale = 0.5]{img/1.png}
+%\includegraphics[scale = 0.5]{img/img_name.png}
+
+Pentru a asigura o comunicare securizata a datelor intre doua statii am utilizat protocolul de retea SSH. Acesta se foloseste de criptarea cu \emph{\textbf{\href{https://en.wikipedia.org/wiki/Public-key_cryptography}{chei asimetrice}}} ce furnizeaza un mod mai sigur de logare (comunicare) intr-un server cu SSH decit folosind o parola obisnuita.
+
+Primul pas este de a crea perechea de chei pe masina client:
+
+\begin{quote}\tt
+	\$ssh-keygen -t rsa (Fig.~\ref{fig:generarea_ssh_key})
+\end{quote}
+
+Dupa ce am introdus comanda de generare a cheii am primit citeva intrebari ce tine de marirea securitatii prin protejarea cheii privade, cu o parola de acces.
+
+La generarea acestor perechi de key se utilizeaza un mecanizm special care ne ofera doua siruri lungi de caractere: o cheie publica si o cheie privata.
+
 
 Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat, 
 \textbf{git command --example "test"}
@@ -74,6 +87,14 @@ git config --global user.name ""
 
 
 \subsection{Imagini}
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 1]{img/1.png}
+		\caption{O figur\u{a} cu text incorporat}%
+		\label{fig:generarea_ssh_key}
+	\end{center}
+\end{figure}
 
 Adauga cite cel putin o imagine (sau mai multe) pentru fiecare functionalitate adaugata.
 
