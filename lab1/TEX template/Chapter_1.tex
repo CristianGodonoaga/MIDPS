@@ -76,7 +76,7 @@ Pentru a incepe utilizarea sistemului Git, mai intii este nevoie de setarea conf
 Utilizind comenzile:
 \begin{quote}\tt
 	\$git config --global user.name "Godonoaga C."\\
-	\$git config --global user.email "some@email.com" \hfill(Fig.~\ref{fig:generarea_ssh_key})
+	\$git config --global user.email "some@email.com" \hfill(Fig.~\ref{fig:git_config})
 \end{quote}
 %\begin{description}
 %	\item[\tt\$git config --system] \hfil Configurare la nivel de sistem. 
@@ -89,19 +89,22 @@ Deoarece aceste setari depind foarte mult de necesitatea utilizatorului nu exist
 
 Pentru a da start sistemului si anume pentru a monitoriza schimbarile in proiectul necesar se utilizeaza comanda {\tt \$git init}, aceasta va insemna ca noi avem nevoie de monitorizarea schimbarilor a tuturor fisierilor ce se afla in folderul curenta (creareaza un repository).
 
+Din acest moment putem incepe versionarea proiectului nostru insa mai este un pas ce tine de setare, nu toate fisierele ce sunt in proiectul nostu au nevoie de versionare, unele chear fiind executabile generate de procesul de compilare sau efectiv parametrii de configurare ai aplicatiei. Pentru aceasta fisierele sau directoarele ce se doresc a fi ignorate de sistemul de versionare se noteaza intr-un fisier numit {\tt.gitignore}. Voi plasa acest fisier in radacina proiectului pentru a nu cauta foarte mult path-urile ignorate, deoarece acesta este evaluat in mod recursiv si putem avea mai multe fisiere .gitignore.
+
+\underline{Salvarea starii fisierelor} sau intregului proiect se efectueaza utilizint comenzile de baza pe care le contine Git.
 
 
 
-Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat, 
-\textbf{git command --example "test"}
-cu atit mai putine intrebari vei avea la aparare.
+\textbf{git command --example "test"}\\
+
+Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat, cu atit mai putine intrebari vei avea la aparare.
 
 \begin{lstlisting}
 git config --global user.name ""
 \end{lstlisting}
 
 \newcommand{\code}[1]{\texttt{#1}}
-\code{git configss}
+\code{git config}
 \tt git code
 
 
@@ -126,4 +129,12 @@ git config --global user.name ""
 	\end{center}
 \end{figure}
 
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_config.png}
+		\caption{Configurare VCS}%
+		\label{fig:git_config}
+	\end{center}
+\end{figure}
 \clearpage

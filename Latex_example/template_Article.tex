@@ -1,0 +1,62 @@
+
+\documentclass[]{article}
+\usepackage{hyperref}
+\usepackage{graphicx}
+%opening
+\title{Tex Example}
+\author{Godonoaga C.}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Abaut}
+
+\subsection{Chenare}
+Primul pas este de a crea perechea de chei pe masina client:
+
+\begin{quote}\tt
+	\fbox{\$ssh-keygen -t rsa (Fig.~\ref{fig:name_picture_fig})}
+\end{quote}
+
+Vezi Fig.~\ref{fig:name_picture_fig}
+la pag.~\pageref{fig:name_picture_fig}.
+
+
+\begin{description}
+	\item[-flags] descriptions \hfill (link caption)
+\end{description}
+
+
+
+
+\fbox{\parbox[t]%
+	{4cm}{ sdadsa
+}}
+
+\begin{quote}
+	\raggedleft content...
+\end{quote}
+
+\newpage
+\section{Imagini}
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 1]{img/1.png}
+		\caption{O figur\u{a} cu text incorporat}%
+		\label{fig:name_picture_fig}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\label{key_name}
+	\item aa
+	\item bb
+\end{itemize}
+
+\end{document}
