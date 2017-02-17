@@ -91,7 +91,7 @@ Pentru a da start sistemului si anume pentru a monitoriza schimbarile in proiect
 
 Din acest moment putem incepe versionarea proiectului nostru insa mai este un pas ce tine de setare, nu toate fisierele ce sunt in proiectul nostu au nevoie de versionare, unele fiind executabilele generate de procesul de compilare sau efectiv parametrii de configurare ai aplicatiei. Pentru aceasta fisierele sau directoarele ce se doresc a fi ignorate de sistemul de versionare se noteaza intr-un fisier numit {\tt.gitignore}. Voi plasa acest fisier in radacina proiectului pentru a nu cauta foarte mult path-urile ignorate, deoarece acesta este evaluat in mod recursiv si putem avea mai multe fisiere .gitignore.
 
-\underline{Salvarea starii fisierelor} (snapshot) sau intregul proiect se efectueaza folosind comenzile de baza pe care le contine Git. Ele ne permit gestionarea procesului de versionare. La indeplinirea lucrarii de laborator sunt utilizate doar o parte, insa ele contin o multime destul de vasta si este nevoie de practica pentru a percepe modul de functionare si pentru a capata deprinderea de utilizare.
+\emph{Salvarea starii fisierelor} (snapshot) sau intregul proiect se efectueaza folosind comenzile de baza pe care le contine Git. Ele ne permit gestionarea procesului de versionare. La indeplinirea lucrarii de laborator sunt utilizate doar o parte, insa ele contin o multime destul de vasta si este nevoie de practica pentru a percepe modul de functionare si pentru a capata deprinderea de utilizare.
 
 
 Un alt mecanism ce ne ofera sistemul git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea cazul in care este nevoie de alipirea ramurelor sau a un unei componente, ...
@@ -110,18 +110,15 @@ Un alt mecanism ce ne ofera sistemul git este ramificarea acestui proces de vers
 		\caption{Generarea ssh-key}%
 		\label{fig:generarea_ssh_key}
 	\end{center}
-\end{figure}
 
-\begin{figure}[htb]
+
 	\begin{center}
 		\centering
 		\includegraphics[scale = 0.8]{img/add_key_onserver.png}
 		\caption{Adaugarea ssh-key pe server}%
 		\label{fig:add_key_onserver}
 	\end{center}
-\end{figure}
 
-\begin{figure}[htb]
 	\begin{center}
 		\centering
 		\includegraphics[scale = 0.9]{img/git_config.png}
