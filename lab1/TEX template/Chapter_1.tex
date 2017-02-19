@@ -5,27 +5,21 @@
 \begin{quote}
 \begin{description}
 
-	\item Basic Level (nota 5 - 6) :
+	Initializarea unui repositoriu \\
+	Configurea VCS\\
+	Folosirea fisierului .gitignore\\
+	Crearea branch-urilor\\
+	Commit, Push pe branch-uri\\
+	Revenire la versiunele anterioare
 	
-	initializeaza un nou repositoriu \\
-	configureaza-ti VCS\\
-	crearea branch-urilor (creeaza cel putin 2 branches)\\
-	commit pe ambele branch-uri (cel putin 1 commit per branch)
-
-	\item Normal Level (nota 7 - 8):
-	
-	seteaza un branch to track a remote origin pe care vei putea sa faci push\\
-	reseteaza un branch la commit-ul anterior\\
-	salvarea temporara a schimbarilor care nu se vor face commit imediat\\
-	folosirea fisierului .gitignore
-	
-	\item Advanced Level (nota 9 - 10):
-	
-	merge 2 branches\\
-	rezolvarea conflictelor a 2 branches\\
-	comezile git care trebuie cunoscute
-	\item Bonus Point (+1):\\
-	Folosirea tag-urilor pentru marcarea schimbarilor simnificative precum release-ul.
+	Track a remote branch\\
+	Resetarea unui branch la commit-ul anterior\\
+	Salvarea temporara a schimbarilor (stash)\\
+	Folosirea fisierului .gitignore
+		
+	Unirea a doua branch-uri\\
+	Rrezolvarea conflictelor a 2 branches\\
+	Folosirea tag-urilor.
 
 \end{description}
 \end{quote}
@@ -63,20 +57,20 @@ Pentru a asigura o comunicare securizata a datelor intre doua statii am utilizat
 
 Intr-un prim pas se creaza perechea de chei pe masina client:
 \begin{quote}\tt
-	\$ssh-keygen -t rsa \hfill (Fig.~\ref{fig:generarea_ssh_key})
+	\$ssh-keygen -t rsa \hfill
 \end{quote}
 
 %\begin{description}
 %	\item[-t rsa] tipul de cheii generate
 %\end{description}
 
-Dupa ce am introdus comanda de generare a cheii, am primit citeva intrebari ce tine de marirea securitatii prin protejarea cheii private, cu o parola de acces. Odata ce perechea de chei este generata plasam cheia publica pe serverul GitHub (Fig.~\ref{fig:add_key_onserver}).
+Dupa ce am introdus comanda de generare a cheii, am primit citeva intrebari ce tine de marirea securitatii prin protejarea cheii private, cu o parola de acces. Odata ce perechea de chei este generata plasam cheia publica pe serverul GitHub.
 
 Pentru a incepe utilizarea sistemului Git, mai intii este nevoie de setarea configuratiei de baza. Aceste configurari pot fi facute in trei modalitati, ele vor determina cit de amplu va fi aplicarea acestora.
 Utilizind comenzile:
 \begin{quote}\tt
 	\$git config --global user.name "Godonoaga C."\\
-	\$git config --global user.email "some@email.com" \hfill(Fig.~\ref{fig:git_config})
+	\$git config --global user.email "some@email.com"
 \end{quote}
 %\begin{description}
 %	\item[\tt\$git config --system] \hfil Configurare la nivel de sistem. 
@@ -94,7 +88,7 @@ Din acest moment putem incepe versionarea proiectului nostru insa mai este un pa
 \emph{Salvarea starii fisierelor} (snapshot) sau intregul proiect se efectueaza folosind comenzile de baza pe care le contine Git. Ele ne permit gestionarea procesului de versionare. La indeplinirea lucrarii de laborator sunt utilizate doar o parte, insa ele contin o multime destul de vasta si este nevoie de practica pentru a percepe modul de functionare si pentru a capata deprinderea de utilizare.
 
 
-Un alt mecanism ce ne ofera sistemul git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea cazul in care este nevoie de alipirea ramurelor sau a un unei componente, ...
+Un alt mecanism ce ne ofera sistemul Git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea caz contrar, in care este nevoie de alipirea(unirea) ramurelor sau a unei componente. Deci Git dispune si de acest mecanism, insa el este unul din cele mai complexe si lipsa cunostintelor de a utiliza efectiv aceasta comanda (git merge) poate provoca conflicte. deoarece aceasta unire este efectuata in mod automat  
 \\
 \\
 \\
