@@ -88,7 +88,7 @@ Din acest moment putem incepe versionarea proiectului nostru insa mai este un pa
 \emph{Salvarea starii fisierelor} (snapshot) sau intregul proiect se efectueaza folosind comenzile de baza pe care le contine Git. Ele ne permit gestionarea procesului de versionare. La indeplinirea lucrarii de laborator sunt utilizate doar o parte, insa ele contin o multime destul de vasta si este nevoie de practica pentru a percepe modul de functionare si pentru a capata deprinderea de utilizare.
 
 
-Un alt mecanism ce ne ofera sistemul Git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea caz contrar, in care este nevoie de alipirea(unirea) ramurelor sau a unei componente. Deci Git dispune si de acest mecanism, insa el este unul din cele mai complexe si lipsa cunostintelor de a utiliza efectiv aceasta comanda poate provoca conflicte. In mod normal aceasta unire este efectuata automat, insa mecanismul nu este capabil sa alipeasca unu si acelasi document prezent in ambele ramuri cu context diferit. Aici apelam la rezolvarea acestora in mod manual indicind varianta corecta. 
+Un alt mecanism ce ne ofera sistemul Git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea caz contrar, in care este nevoie de alipirea(unirea) ramurelor sau a unei componente. Deci Git dispune si de acest mecanism, insa el este unul din cele mai complexe si lipsa cunostintelor de a utiliza efectiv aceasta comanda poate provoca conflicte. In mod normal aceasta unire este efectuata automat, insa mecanismul nu este capabil sa alipeasca unu si acelasi document prezent in ambele ramuri cu context diferit. Aici apelam la rezolvarea acestora in mod manual indicind varianta corecta.
 \\
 In continuare am atasat imagini care contin desfasurarea lucrarii
 \\
@@ -123,4 +123,32 @@ In continuare am atasat imagini care contin desfasurarea lucrarii
 		\label{fig:git_config}
 	\end{center}
 \end{figure}
+
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_init.png}
+		\caption{Crearearea unui repository local}%
+		\label{fig:gitinit}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_remote_track.png}
+		\caption{Set to track a remote branch}%
+		\label{fig:remote_track}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_snapshot.png}
+		\caption{Snapshot}%
+		\label{fig:snapshot}
+	\end{center}
+\end{figure}
+
 \clearpage
