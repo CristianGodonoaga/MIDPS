@@ -90,6 +90,7 @@ Din acest moment putem incepe versionarea proiectului nostru insa mai este un pa
 
 Un alt mecanism ce ne ofera sistemul Git este ramificarea acestui proces de versionare. Posibilitatile oferite de acesta sunt multe iar baza fiind clonarea starii unei ramuri numite "branch", unde pot fi aplicate modificari care nu afecteaza ramura parinte. Adica dintr-un anumit punct al dezvoltarii produsului nostru, stiva de commit-uri se poate ramifica si apoi direcțiile de dezvoltare vor diverge. Desigur, poate aparea caz contrar, in care este nevoie de alipirea(unirea) ramurelor sau a unei componente. Deci Git dispune si de acest mecanism, insa el este unul din cele mai complexe si lipsa cunostintelor de a utiliza efectiv aceasta comanda poate provoca conflicte. In mod normal aceasta unire este efectuata automat, insa mecanismul nu este capabil sa alipeasca unu si acelasi document prezent in ambele ramuri cu context diferit. Aici apelam la rezolvarea acestora in mod manual indicind concret rezultatul pe care dorim sal obtinem in final.
 \\
+\\In continuare sunt atasate rezultatele obtinute in urma indeplinirei sarcinelor.
 \\
 \\
 
@@ -168,5 +169,22 @@ Un alt mecanism ce ne ofera sistemul Git este ramificarea acestui proces de vers
 	\end{center}
 \end{figure}
 
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_conflict.png}
+		\caption{Conflict la unirea a 2 branch-uri}%
+		\label{fig:conflict}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+	\begin{center}
+		\centering
+		\includegraphics[scale = 0.9]{img/git_solv-conflict.png}
+		\caption{Rezolvarea conflictelor}%
+		\label{fig:conflict}
+	\end{center}
+\end{figure}
 
 \clearpage
