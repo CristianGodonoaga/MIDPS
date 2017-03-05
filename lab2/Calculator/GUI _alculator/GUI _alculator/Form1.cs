@@ -49,19 +49,19 @@ namespace GUI__alculator
                 switch (operation)
                 {
                     case "+":
-                        textBoxValue.Text = Math.Round((value + Double.Parse(textBoxValue.Text)), 4).ToString();
+                        textBoxValue.Text = (value + Double.Parse(textBoxValue.Text)).ToString();
                         break;
                     case "-":
-                        textBoxValue.Text = Math.Round((value - Double.Parse(textBoxValue.Text)), 4).ToString();
+                        textBoxValue.Text = (value - Double.Parse(textBoxValue.Text)).ToString();
                         break;
                     case "*":
-                        textBoxValue.Text = Math.Round((value * Double.Parse(textBoxValue.Text)), 4).ToString();
+                        textBoxValue.Text = (value * Double.Parse(textBoxValue.Text)).ToString();
                         break;
                     case "/":
-                        textBoxValue.Text = Math.Round((value / Double.Parse(textBoxValue.Text)), 4).ToString();
+                        textBoxValue.Text = (value / Double.Parse(textBoxValue.Text)).ToString();
                         break;
                     case "^":
-                        textBoxValue.Text = Math.Round(Math.Pow(value, Double.Parse(textBoxValue.Text)), 4).ToString();
+                        textBoxValue.Text = Math.Pow(value, Double.Parse(textBoxValue.Text)).ToString();
                         break;
                     default:
                         break;
@@ -72,12 +72,12 @@ namespace GUI__alculator
             switch (buttonValue.Text)
             {
                 case "+/-":
-                    textBoxValue.Text = (Math.Round((Double.Parse(textBoxValue.Text) * (-1)), 4)).ToString();
+                    textBoxValue.Text = ((Double.Parse(textBoxValue.Text) * (-1))).ToString();
                     value = Double.Parse(textBoxValue.Text);
                     labelOperatie.Text = "";
                     break;
                 case "√":
-                    textBoxValue.Text = Math.Round(Math.Sqrt(Double.Parse(textBoxValue.Text)), 2).ToString();
+                    textBoxValue.Text = Math.Sqrt(Double.Parse(textBoxValue.Text)).ToString();
                     labelOperatie.Text = buttonValue.Text;
                     break;
             }
