@@ -8,16 +8,25 @@ namespace GUI__alculator
         Double value = 0;
         String operation = "";
         bool operation_pressed = false;
+        int numbers_count = 0;
         public Form1()
         {
             InitializeComponent();
         }
-        private void button_Click(object sender, EventArgs e)
+        private void buttonNumber_Click(object sender, EventArgs e)
         {
             if (textBoxValue.Text == "0" || operation_pressed)
+            {
                 textBoxValue.Clear();
-            Button bottonValue = (Button)sender;
-            textBoxValue.Text = textBoxValue.Text + bottonValue.Text;
+                labelOperatie.Text = "";
+                operation_pressed = false;
+            }
+            if (numbers_count < 16)
+            {
+                numbers_count++;
+                Button bottonValue = (Button)sender;
+                textBoxValue.Text = textBoxValue.Text + bottonValue.Text;
+            }
             //textBoxValue.Text = textBoxValue.Text + "1";
         }
 
@@ -26,51 +35,126 @@ namespace GUI__alculator
             if (textBoxValue.Text != "0")
                 textBoxValue.Text = "0";
             value = 0;
+            numbers_count = 0;
             labelOperatie.Text = "";
+            operation = "";
         }
 
-        private void button_Operation(object sender, EventArgs e) //operatiile
+        private void buttonOperations_Click(object sender, EventArgs e)
         {
-            if (!operation_pressed)//daca avem operatii multiple calc. pasul precedent
+            //MessageBox.Show(operation);
+            Button buttonValue = (Button)sender;
+            if (!operation_pressed)
+            {
                 switch (operation)
                 {
                     case "+":
-                        textBoxValue.Text = (value + Double.Parse(textBoxValue.Text)).ToString();
-                        value = Double.Parse(textBoxValue.Text);
+                        textBoxValue.Text = Math.Round((value + Double.Parse(textBoxValue.Text)), 4).ToString();
                         break;
                     case "-":
-                        textBoxValue.Text = (value - Double.Parse(textBoxValue.Text)).ToString();
+                        textBoxValue.Text = Math.Round((value - Double.Parse(textBoxValue.Text)), 4).ToString();
                         break;
                     case "*":
-                        textBoxValue.Text = (value * Double.Parse(textBoxValue.Text)).ToString();
+                        textBoxValue.Text = Math.Round((value * Double.Parse(textBoxValue.Text)), 4).ToString();
                         break;
                     case "/":
-                        textBoxValue.Text = (value / Double.Parse(textBoxValue.Text)).ToString();
+                        textBoxValue.Text = Math.Round((value / Double.Parse(textBoxValue.Text)), 4).ToString();
                         break;
-                    case "p":
-                        textBoxValue.Text = (value + Double.Parse(textBoxValue.Text)).ToString();
-                        break;
-                    case "sqrt":
-                        textBoxValue.Text = (value + Double.Parse(textBoxValue.Text)).ToString();
-                        break;
-                    case "+/-":
-                        textBoxValue.Text = (value + Double.Parse(textBoxValue.Text)).ToString();
+                    case "^":
+                        textBoxValue.Text = Math.Round(Math.Pow(value, Double.Parse(textBoxValue.Text)), 4).ToString();
                         break;
                     default:
                         break;
                 }
-            Button buttonValue = (Button)sender;
+                value = Double.Parse(textBoxValue.Text);
+                labelOperatie.Text = buttonValue.Text;
+            }
+            switch (buttonValue.Text)
+            {
+                case "+/-":
+                    textBoxValue.Text = (Math.Round((Double.Parse(textBoxValue.Text) * (-1)), 4)).ToString();
+                    value = Double.Parse(textBoxValue.Text);
+                    labelOperatie.Text = "";
+                    break;
+                case "√":
+                    textBoxValue.Text = Math.Round(Math.Sqrt(Double.Parse(textBoxValue.Text)), 2).ToString();
+                    labelOperatie.Text = buttonValue.Text;
+                    break;
+            }
             operation = buttonValue.Text;
-            labelOperatie.Text = buttonValue.Text;
-            //value = Double.Parse(textBoxValue.Text);//stocam valoarea din textBox->value
+            
             operation_pressed = true;//setam actiunea de operatie
+            numbers_count = 0;
         }
 
-        private void button_Eqal(object sender, EventArgs e)
+        private void buttonEqal_Click(object sender, EventArgs e)
         {
-            button_Operation(sender, e);
+            //operation_pressed = true;
+            buttonOperations_Click(sender, e);
             labelOperatie.Text = "";
             operation_pressed = false;
+        }
+
+        private void buttonDecimal_Click(object sender, EventArgs e)
+        {
+            if(!textBoxValue.Text.Contains(","))
+            {
+                textBoxValue.Text = textBoxValue.Text + ",";
+            }
+        }
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //MessageBox.Show(e.KeyChar.ToString());
+            switch (e.KeyChar.ToString())
+            {
+                case "0":
+                    button0.PerformClick();
+                    break;
+                case "1":
+                    button1.PerformClick();
+                    break;
+                case "2":
+                    button2.PerformClick();
+                    break;
+                case "3":
+                    button3.PerformClick();
+                    break;
+                case "4":
+                    button4.PerformClick();
+                    break;
+                case "5":
+                    button5.PerformClick();
+                    break;
+                case "6":
+                    button6.PerformClick();
+                    break;
+                case "7":
+                    button7.PerformClick();
+                    break;
+                case "8":
+                    button8.PerformClick();
+                    break;
+                case "9":
+                    button9.PerformClick();
+                    break;
+                case "+":
+                    add.PerformClick();
+                    break;
+                case "-":
+                    sub.PerformClick();
+                    break;
+                case "*":
+                    times.PerformClick();
+                    break;
+                case "/":
+                    div.PerformClick();
+                    break;
+                case ".":
+                    point.PerformClick();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
